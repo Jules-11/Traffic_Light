@@ -10,3 +10,7 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+.turnedOn {
+    box-shadow: 0px 0px 50px 20px #FFFFDA
+}
