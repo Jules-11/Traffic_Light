@@ -5,26 +5,18 @@ import Footer from "./Footer";
 import motoImg from "../../img/PngItem_3338773.png";
 //create your first component
 const Home = () => {
-	const [red, setRed] = useState(false);
-	const [yellow, setYellow] = useState(false);
-	const [green, setGreen] = useState(false);
+	const [color, setColor] = useState("red");
 
 	const redLight = () => {
-		setRed(true);
-		setYellow(false);
-		setGreen(false);
+		setColor("red");
 	};
 
 	const yellowLight = () => {
-		setRed(false);
-		setYellow(true);
-		setGreen(false);
+		setColor("yellow");
 	};
 
 	const greenLight = () => {
-		setRed(false);
-		setYellow(false);
-		setGreen(true);
+		setColor("green");
 	};
 
 	const automaticSwitch = () => {
@@ -78,7 +70,7 @@ const Home = () => {
 				<div className="container" style={trafficLightBox}>
 					<div className="row">
 						<LightBulb
-							className={red ? "turnedOn" : null}
+							className={color === "red" ? "turnedOn" : null}
 							onClick={redLight}
 							color={" #bb1e10"}
 						/>
@@ -87,14 +79,14 @@ const Home = () => {
 						<LightBulb
 							onClick={yellowLight}
 							color={"#f7b500"}
-							className={yellow ? "turnedOn" : null}
+							className={color === "yellow" ? "turnedOn" : null}
 						/>
 					</div>
 					<div className="row">
 						<LightBulb
 							onClick={greenLight}
 							color={"#32A431"}
-							className={green ? "turnedOn" : null}
+							className={color === "green" ? "turnedOn" : null}
 						/>
 					</div>
 				</div>
